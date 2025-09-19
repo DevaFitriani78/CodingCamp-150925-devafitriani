@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+
+  <!-- CSS External -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Tailwind CDN resmi -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-6 bg-gray-50">
+
+  <!-- Header -->
+  <header>
+    <h1 class="text-3xl pb-4 text-pink-500 font-bold pl-6 pt-6 bg-yellow-100 rounded">
+      Todo List
+    </h1>
+  </header>
+
+  <!-- Main -->
+  <main class="mt-6">
+    <!-- Form Tambah Todo -->
+    <form onsubmit="event.preventDefault(); addTodo();" class="mb-6">
+      <input type="text" id="todo-input" placeholder="Add your new todo"
+        class="border border-gray-300 rounded p-2 mb-2 w-full">
+      <input type="date" id="todo-date" class="border border-gray-300 rounded p-2 mb-2 w-full">
+      <button type="submit"
+        class="bg-blue-500 text-white rounded p-2 mt-2 w-full hover:bg-blue-600">Add Todo</button>
+    </form>
+
+    <!-- Filter + Delete All -->
+    <section>
+      <header class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-pink-500">Your Todos:</h2>
+        <button onclick="deleteAll()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Delete All</button>
+      </header>
+
+      <!-- Filter -->
+      <div class="flex gap-2 mb-4">
+        <input type="text" id="filter-input" placeholder="Filter by task..."
+          class="border border-gray-300 rounded p-2 w-full">
+        <button onclick="filterTodo()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Filter</button>
+      </div>
+
+      <!-- List UL -->
+      <ul class="mt-4 space-y-2" id="todo-list">
+        <!-- Dynamic list -->
+      </ul>
+
+      <!-- Tabel task -->
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold mb-2">Task Table</h3>
+        <table class="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-200">
+                <th class="border border-gray-300 px-4 py-2">Task</th>
+                <th class="border border-gray-300 px-4 py-2">Date</th>
+                <th class="border border-gray-300 px-4 py-2">Status</th>
+                <th class="border border-gray-300 px-4 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="todo-table">
+            <!-- Dynamic rows -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-6 text-center text-gray-600">
+    <p>&copy; 2025 Deva Website</p>
+  </footer>
+
+  <!-- JS External -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
